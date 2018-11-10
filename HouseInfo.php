@@ -56,25 +56,25 @@ form {
 </style>
 
 <body>
-  <form>
+  <form action ="PutDataInTable.php" method="POST">
   First name: 
   <input type="text" name="firstname"><br>
   Last name: 
   <input type="text" name="lastname"><br>
   House address: 
-  <input type="text" name="firstname"><br>
+  <input type="text" name="address"><br>
   Total capacity: 
-  <input type="text" name="lastname"><br>
+  <input type="text" name="capacity"><br>
   Spaces: 
-  <input type="text" name="lastname"><br>
+  <input type="text" name="spaces"><br>
   Email: 
-  <input type="text" name="firstname"><br>
+  <input type="text" name="email"><br>
   Contact number (not necessary): 
-  <input type="text" name="lastname"><br>
-  Spaces: 
-  <input type="text" name="lastname"><br>
+  <input type="text" name="number"><br>
   Description:<br>
-  <textarea maxlength="280" rows="5"></textarea><br>
+  <textarea maxlength="280" rows="5" name="description"></textarea><br>
+  House password:<br>
+  <input type="text" name="pwd"><br>
   <button type="submit" name="submit">Submit</button>
 </form>
 </body>
