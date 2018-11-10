@@ -12,22 +12,22 @@
   }
 
   // Opens a connection to a MySQL server
-  $connection=mysqli_connect('35.195.42.162:3306', $username, $password, $database);
+  $connection=mysqli_connect('35.195.42.162', $username, $password, $database);
   if (!$connection) {
-  die('Not connected : ' . mysqli_error());
+  die('Not connected : ' . mysqli_error($connection));
   }
 
   // Set the active MySQL database
   $db_selected = mysqli_select_db($database, $connection);
   if (!$db_selected) {
-  die ('Can\'t use db : ' . mysqli_error());
+  die ('Can\'t use db : ' . mysqli_error($connection));
   }
 
   // Select all the rows in the markers table
   $query = "SELECT * FROM houses";
   $result = mysqli_query($query);
   if (!$result) {
-  die('Invalid query: ' . mysqli_error());
+  die('Invalid query: ' . mysqli_error($connection));
   }
 
   header("Content-type: text/xml");
