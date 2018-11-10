@@ -108,8 +108,8 @@ body {
 
         <input type="text" id="address" name="Address" placeholder="Your address.." required>
         <button type="button" id="show">Show on map</button><br>
-        <input type="hidden" name="latitude">
-        <input type="hidden" name="longitude">
+        <input type="hidden" name="latitude" value="">
+        <input type="hidden" name="longitude" value="">
 
         <br>
 
