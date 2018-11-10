@@ -12,7 +12,7 @@
   }
 
   // Opens a connection to a MySQL server
-  $connection=mysqli_connect('35.195.42.162', $username, $password, $database);
+  $connection=mysqli_connect('35.195.42.162:3306', $username, $password, $database);
   if (!$connection) {
   die('Not connected : ' . mysqli_error());
   }
