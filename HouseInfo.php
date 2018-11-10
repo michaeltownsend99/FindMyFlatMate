@@ -51,6 +51,22 @@ input[type=submit]:hover {
 }
 
 
+button[type=button] {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type=button]:hover {
+    background-color: gray;
+
+}
+
 .area {
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -63,6 +79,7 @@ input[type=submit]:hover {
     float: left;
     width: 50%;
     padding: 10px;
+    height: auto;
 }
 
 
@@ -90,7 +107,9 @@ body {
         <input type="hidden" name="latitude">
         <input type="hidden" name="longitude">
 
-        <label for="capacity">Last Name</label>
+        <br>
+
+        <label for="capacity">Total Capacity</label>
 
         <input type="text" id="capacity" name="Capacity" placeholder="House Capacity.." required>
 
