@@ -62,11 +62,23 @@
         text-align: left;
       }
 
-      #submit{
+      #add-house{
+        position: absolute;
+        right: 10px;
+        top: 10px;
         border: none;
         background-color: white;
-        height: 35px;
+        height: 40px;
         border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+      }
+
+      #add-button{
+        background-color: white;
+        height: 40px;
+        border: 0px;
+        border-radius: 2px;
+        font-family: Roboto;
       }
     </style>
   </head>
@@ -78,6 +90,11 @@
           <input id="address" type="textbox" onkeypress="handle(event)" placeholder="Enter address...">
           <!--<input id="submit" type="button" value="Search">-->
         <!--</form>-->
+      </div>
+      <div id="add-house">
+        <form action="HouseInfo.php">
+          <input type="submit" id="add-button" value="Add House" />
+        </form>
       </div>
     <!--</div>-->
     <script>
