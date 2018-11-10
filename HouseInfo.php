@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <style>
 input[type=text], select {
     width: 100%;
@@ -11,24 +10,8 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-body {
-    background-color: #c8cbd1;
-}
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
 
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-textarea {
+input[type=textarea], select {
     resize: none;
     width: 100%;
     padding: 12px 20px;
@@ -39,44 +22,87 @@ textarea {
     box-sizing: border-box;
 }
 
-button {
-  
+input[type=submit] {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
-div {
+
+input[type=submit]:hover {
+    background-color: gray;
+}
+
+
+.area {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+
 }
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+
 body {
-    text-align: center;
-}
-form {
-    display: inline-block;
+    background-color: black;
 }
 </style>
-
 <body>
-  <form action ="PutDataInTable.php" method="POST">
-  First name: 
-  <input type="text" name="firstname"><br>
-  Last name: 
-  <input type="text" name="lastname"><br>
-  House address: 
-  <input type="text" name="address"><br>
-  Total capacity: 
-  <input type="text" name="capacity"><br>
-  Spaces: 
-  <input type="text" name="spaces"><br>
-  Email: 
-  <input type="text" name="email"><br>
-  Contact number (not necessary): 
-  <input type="text" name="number"><br>
-  Description:<br>
-  <textarea maxlength="280" rows="5" name="description"></textarea><br>
-  House password:<br>
-  <input type="text" name="pwd"><br>
-  <button type="submit" name="submit">Submit</button>
-</form>
+
+<div class="column">
+    <div class="area">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+        <label for="lname">Last Name</label>
+
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+        <label for="address">House Address</label>
+
+        <input type="text" id="address" name="Address" placeholder="Your address.." required>
+        
+        <label for="capacity">Last Name</label>
+
+        <input type="text" id="capacity" name="Capacity" placeholder="House Capacity.." required>
+
+        <label for="spaces">Spaces Left</label>
+
+        <input type="text" id="spaces" name="spaces" placeholder="Spaces left in the house.." required>
+
+        <label for="email">Email</label>
+
+        <input type="text" id="email" name="email" placeholder="Your email.." required>
+
+        <label for="phone">Phone Number (optional)</label>
+
+        <input type="text" id="phone" name="phone" placeholder="Your phone number..">
+
+        <label for="descreption">Description Of House</label>
+
+        <input type="textarea" maxlength="280" id="descreption" name="descreption" placeholder="A descreption of the house.." required>
+      
+        <input type="submit" value="Done">
+      </form>
+    </div>
+</div>
+
+<!-- ADD MAP HERE IN BELOW DIV -->
+
+<div class="column">
+
+</div>
 </body>
 </html>
-
