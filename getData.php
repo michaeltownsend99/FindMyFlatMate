@@ -18,14 +18,14 @@
   }
 
   // Set the active MySQL database
-  $db_selected = mysqli_select_db($database, $connection);
+  $db_selected = mysqli_select_db($connection, $database);
   if (!$db_selected) {
   die ('Can\'t use db : ' . mysqli_error($connection));
   }
 
   // Select all the rows in the markers table
   $query = "SELECT * FROM houses";
-  $result = mysqli_query($query);
+  $result = mysqli_query($connection, $query);
   if (!$result) {
   die('Invalid query: ' . mysqli_error($connection));
   }
