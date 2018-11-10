@@ -86,6 +86,10 @@ button[type=button]:hover {
 body {
     background-color: black;
 }
+
+#map{
+  height: 100%;
+}
 </style>
 <body>
 
@@ -137,7 +141,7 @@ body {
 <!-- ADD MAP HERE IN BELOW DIV -->
 
 <div class="column">
-
+  <div id="map"></div>
 </div>
 <script>
   var map, infoWindow, marker, geocoder;
