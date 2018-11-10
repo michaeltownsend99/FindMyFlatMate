@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 
 
 } else {
-    header("Location: /HouseInfo.php");
+    header("Location: /HouseInfo.php?signup=didntclick");
     exit();
 
 }

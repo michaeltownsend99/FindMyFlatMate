@@ -107,7 +107,7 @@ body {
         <label for="address">House Address</label>
 
         <input type="text" id="address" name="Address" placeholder="Your address.." required>
-        <button type="button" name="show">Show on map</button><br>
+        <button type="button" id="show">Show on map</button><br>
         <input type="hidden" name="latitude">
         <input type="hidden" name="longitude">
 
@@ -133,7 +133,7 @@ body {
 
         <input type="password" id="password" name="password" placeholder="Your house password.." required>
 
-        <input type="submit" value="Done">
+        <button type="submit" name="submit">Done</button>
       </form>
     </div>
 </div>
