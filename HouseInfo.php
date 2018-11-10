@@ -1,4 +1,3 @@
-<<<<<<< HEAD:HouseInfo.html
 <!DOCTYPE html>
 <html>
 
@@ -30,8 +29,8 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 textarea {
-  	resize: none;
-  	width: 100%;
+    resize: none;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -41,7 +40,7 @@ textarea {
 }
 
 button {
-	
+  
 }
 div {
     border-radius: 5px;
@@ -59,26 +58,21 @@ form {
 <body>
   <form>
   First name: 
-=======
-<form>
-  First name:
->>>>>>> 59952b19c846720407a503e585461371e4b8ad7d:HouseInfo.php
   <input type="text" name="firstname"><br>
-  Last name:
+  Last name: 
   <input type="text" name="lastname"><br>
-  House address:
+  House address: 
   <input type="text" name="firstname"><br>
-  Total capacity:
+  Total capacity: 
   <input type="text" name="lastname"><br>
-  Spaces:
+  Spaces: 
   <input type="text" name="lastname"><br>
-  Email:
+  Email: 
   <input type="text" name="firstname"><br>
-  Contact number (not necessary):
+  Contact number (not necessary): 
   <input type="text" name="lastname"><br>
-  Spaces:
+  Spaces: 
   <input type="text" name="lastname"><br>
-<<<<<<< HEAD:HouseInfo.html
   Description:<br>
   <textarea maxlength="280" rows="5"></textarea><br>
   <button type="submit" name="submit">Submit</button>
@@ -86,15 +80,3 @@ form {
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-=======
-</form>
->>>>>>> 59952b19c846720407a503e585461371e4b8ad7d:HouseInfo.php
