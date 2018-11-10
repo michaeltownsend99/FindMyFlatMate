@@ -34,9 +34,9 @@
         });
 
         var image = {
-          url: 'http://1d113c6e.ngrok.io/House.png',
+          url: 'http://ecefff6c.ngrok.io/House.png',
        
-          scaledSize: new google.maps.Size(30, 30),
+          scaledSize: new google.maps.Size(30, 30)
          
         };
 
