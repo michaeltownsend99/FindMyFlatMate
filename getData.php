@@ -1,43 +1,65 @@
 <?php
-  $doc = domxml_new_doc("1.0");
-  $node = $doc->create_element("houses");
-  $parnode = $doc->append_child($node);
+  require 'cred.php';
 
-  $connection=mysql_connect('wdit34254jcrnon57cewcbigvi@speckle-umbrella-22.iam.gserviceaccount.com', $username, $password);
-  if(!$connection)
+  function parseToXML($htmlStr)
   {
-    die('Not connection: ' . mysql_error());
+  $xmlStr=str_replace('<','&lt;',$htmlStr);
+  $xmlStr=str_replace('>','&gt;',$xmlStr);
+  $xmlStr=str_replace('"','&quot;',$xmlStr);
+  $xmlStr=str_replace("'",'&#39;',$xmlStr);
+  $xmlStr=str_replace("&",'&amp;',$xmlStr);
+  return $xmlStr;
   }
 
-  $db_selected = mysql_select_db($database, $connection);
-  if (!$db_selected)
-  {
-    die ('Can\'t use db : ' . mysql_error());
+  // Opens a connection to a MySQL server
+  $connection=mysqli_connect ('wdit34254jcrnon57cewcbigvi@speckle-umbrella-22.iam.gserviceaccount.com', $username, $password);
+  if (!$connection) {
+  die('Not connected : ' . mysqli_error());
   }
 
-  $query = "SELECT * FROM house";
-  $result = mysql_query($query);
-  if(!$result)
-  {
-    die('Invalid query: ' . mysql_error());
+  // Set the active MySQL database
+  $db_selected = mysqli_select_db($database, $connection);
+  if (!$db_selected) {
+  die ('Can\'t use db : ' . mysqli_error());
+  }
+
+  // Select all the rows in the markers table
+  $query = "SELECT * FROM houses";
+  $result = mysqli_query($query);
+  if (!$result) {
+  die('Invalid query: ' . mysqli_error());
   }
 
   header("Content-type: text/xml");
 
-  while($row = @mysql_fetch_assoc("houses"))
-  {
-    $node = $doc->create_element("house");
-    $newnode = $parnode->append_child($node);
+  // Start XML file, echo parent node
+  echo "<?xml version='1.0' ?>";
+  echo '<houses>';
+  $ind=0;
+  // Iterate through the rows, printing XML nodes for each
+  while ($row = @mysqli_fetch_assoc($result)){
+  // Add to XML document node
+  echo '<house ';
+  echo 'address="' . parseToXML($row['address']) . '" ';
+  echo 'latitude="' . $row['latitude'] . '" ';
+  echo 'longitude="' . $row['longitude'] . '" ';
+  echo 'totalcapacity="' . $row['totalcapacity'] . '" ';
+  echo 'spaces="' . $row['spcaes'] . '" ';
+  echo 'description="' . $row['description'] . '" ';
+  echo 'firstname="' . $row['firstname'] . '" ';
+  echo 'lastname="' . $row['lastname'] . '" ';
+  echo 'email="' . $row['email'] . '" ';
+  echo 'phonenumber="' . $row['phonenumber'] . '" ';
 
-    $newnode->set_attribute("id", $row['id']);
-    $newnode->set_attribute("address", $row['address']);
-    $newnode->set_attribute("latitude", $row['latitude']);
-    $newnode->set_attribute("longitude", $row['longitude']);
-    $newnode->set_attribute("totalcapacity", $row['totalcapacity']);
-    $newnode->set_attribute("spaces", $row['spaces']);
-    $newnode->set_attribute("description", $row['description']);
-    $newnode->set_attribute("personID", $row['personID']);
+
+
+
+
+  echo '/>';
+  $ind = $ind + 1;
   }
-  $xmlfile = $doc->dump_mem();
-  echo $xmlfile;
- ?>
+
+  // End XML file
+  echo '</houses>';
+
+?>
