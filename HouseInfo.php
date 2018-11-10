@@ -11,6 +11,16 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 input[type=textarea], select {
     resize: none;
     width: 100%;
@@ -86,13 +96,13 @@ body {
 
         <input type="text" id="email" name="email" placeholder="Your email.." required>
 
-        <label for="phone">Phone Number (optional)</label>
-
-        <input type="text" id="phone" name="phone" placeholder="Your phone number..">
-
         <label for="descreption">Description Of House</label>
 
         <input type="textarea" maxlength="280" id="descreption" name="descreption" placeholder="A descreption of the house.." required>
+
+        <label for="password">Password</label>
+
+        <input type="password" id="password" name="password" placeholder="Your house password.." required>
       
         <input type="submit" value="Done">
       </form>
