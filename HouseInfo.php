@@ -32,10 +32,8 @@ input[type=textarea], select {
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-button {
 
-=======
+
 input[type=submit] {
     width: 100%;
     background-color: black;
@@ -49,7 +47,7 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: gray;
->>>>>>> 915004e9b195410b488ae21d50649fcd823bc506
+
 }
 
 
