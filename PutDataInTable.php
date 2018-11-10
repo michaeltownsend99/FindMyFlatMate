@@ -3,7 +3,7 @@ if (isset($_POST['submit'])) {
 
 
     include 'cred.php';
-    $connection = new mysqli('35.195.42.162', $username, $password, $database);
+    $connection=mysqli_connect('35.195.42.162', $username, $password, $database);
 
     $longitude = mysqli_real_escape_string($connection, $_POST['longitude']);
     $latitude = mysqli_real_escape_string($connection, $_POST['latitude']);
