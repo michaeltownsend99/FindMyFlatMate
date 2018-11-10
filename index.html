@@ -9,27 +9,83 @@
        * element that contains the map. */
       #map {
         height: 100%;
+        /*position: absolute;*/
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
+        position: relative;
+      }
+
+      #floatingSearch{
+        position: absolute;
+        top: 55px;
+        /*background-color: rgba(255, 255, 255, 0.5);*/
+        height: 35px;
+        width: 250px;
+        border-radius: 2px;
+        left: 5px;
+      }
+
+      #search-bar{
+        position: absolute;
+        left: 50%;
+        height: 42px;
+        width: 240px;
+        border-radius: 2px;
+        left: 200px;
+        top: 10px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+        text-align: center;
+      }
+
+      #address{
+        border: 0px;
+        position: relative;
+        height: 40px;
+        width: 200px;
+        background-color: white;/*rgba(255, 255, 255, 0.75);*/
+        font-family: Roboto;
+        font-size: 17px;
+        border-radius: 2px;
+        
+      }
+
+      #address:focus{
+        outline: none;
+      }
+
+      #address::placeholder{
+        text-align: center;
+      }
+
+      #submit{
+        border: none;
+        background-color: white;
+        height: 35px;
+        border-radius: 2px;
       }
     </style>
   </head>
   <body>
-    <div id = "floatingSearch">
-      <input id="address" type="textbox" value="">
-      <input id="submit" type="button" value="Search">
-    </div>
     <div id="map"></div>
+    <!--<div id = "floatingSearch">-->
+      <div id="search-bar">
+        <!--<form>-->
+          <input id="address" type="textbox" onkeypress="handle(event)" placeholder="Enter address...">
+          <!--<input id="submit" type="button" value="Search">-->
+        <!--</form>-->
+      </div>
+    <!--</div>-->
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-      var map, infoWindow, marker;
+      var map, infoWindow, marker, geocoder;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 46.3256, lng: 5.36194},
@@ -56,11 +112,12 @@
           handleLocationError(false, infoWindow, map.getCenter());
         }
 
-        var geocoder = new google.maps.Geocoder();
+        geocoder = new google.maps.Geocoder();
 
-        document.getElementById('submit').addEventListener('click', function() {
-        geocodeAddress(geocoder, map);
-      });
+        //document.getElementById('submit').addEventListener('click', function() {
+        //geocodeAddress(geocoder, map);
+        //});
+
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -88,6 +145,11 @@
             alert('Geocode was not successful for the following reason: ' + status);
           }
         });
+      }
+      function handle(e) {
+        if (e.keyCode === 13){
+          geocodeAddress(geocoder, map);
+        }
       }
     </script>
     <script async defer
