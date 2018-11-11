@@ -97,7 +97,7 @@ body {
 
 <div class="column">
     <div class="area">
-      <form onsubmit="validate()" action ="PutDataInTable.php" method="POST">
+      <form onsubmit="return validate()" action ="PutDataInTable.php" method="POST">
         <label for="fname">First Name</label>
 
         <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
@@ -209,11 +209,8 @@ body {
     });
   }
   function validate(){
-    if(document.getElementById('latitude') === ""){
+    if(document.getElementById('latitude').value == ""){
       return false;
-    }
-    else{
-      return true;
     }
   }
 </script>
