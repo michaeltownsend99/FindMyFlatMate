@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html>
 <style>
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+
 
 input[type=password], select {
     width: 100%;
@@ -22,11 +14,10 @@ input[type=password], select {
 }
 
 input[type=email], select {
-    resize: none;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    display: inline-block;
+    /* display: inline-block; */
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -34,16 +25,7 @@ input[type=email], select {
 
 
 
-input[type=submit] {
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+
 
 input[type=submit]:hover {
     background-color: gray;
@@ -51,28 +33,25 @@ input[type=submit]:hover {
 }
 
 
-button[type=button] {
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+input[type=submit] {
+  width: 100%;
+  background-color: very-light-gray;
+  color: ;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid light-gray;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-button[type=button]:hover {
-    background-color: gray;
-
-}
 
 .area {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: light-gray;
     padding: 20px;
     padding-left: 20%;
     padding-right: 20%;
+    padding-top: 200px;
 }
 
 /* Create two equal columns that floats next to each other */
@@ -83,8 +62,13 @@ button[type=button]:hover {
     height: auto;
 }
 
+.area label
+{
+  font-size: 20px;
+}
+
 body {
-    background-color: black;
+    background-color: white;
     padding-left: 30%;
     padding-right: 30%;
     padding-top: 10%;
@@ -97,11 +81,11 @@ body {
     <center>
     <div class="area">
       <form action ="PwdCheck.php" method="POST">
-         <label for="email">Email</label>
+         <label for="email">Enter the house details: </label>
 
         <input type="email" id="email" name="email" placeholder="Your email.." required>
 
-        <label for="pass">House Password</label>
+        <!-- <label for="pass">House Password</label> -->
 
         <input type="password" id="pass" name="pass" placeholder="Your house password.." required>
 

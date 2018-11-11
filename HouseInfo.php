@@ -36,12 +36,11 @@ input[type=textarea], select {
 
 input[type=submit] {
   width: 100%;
-  background-color: light-gray;
-  color: black;
+  background-color: very-light-gray;
+  color: ;
   padding: 14px 20px;
   margin: 8px 0;
-  border: 2px;
-  border-color: gray;
+  border: 1px solid light-gray;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -53,15 +52,14 @@ input[type=submit]:hover {
 
 
 button[type=button] {
-    width: 100%;
-    background-color: light-gray;
-    color: black;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: 2px;
-    border-color: gray;
-    border-radius: 4px;
-    cursor: pointer;
+  width: 100%;
+  background-color: very-light-gray;
+  color: ;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid light-gray;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button[type=button]:hover {
@@ -140,7 +138,7 @@ body {
 
         <!-- <label for="descreption">Description Of House</label> -->
 
-        <input type="textarea" maxlength="280" id="descreption" name="descreption" placeholder="A descreption of the house.." required>
+        <input type="textarea" maxlength="280" id="descreption" name="descreption" placeholder="A description of the house.." required>
 
         <!-- <label for="password">Password</label> -->
 
