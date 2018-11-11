@@ -43,7 +43,7 @@
   echo 'latitude="' . $row['latitude'] . '" ';
   echo 'longitude="' . $row['longitude'] . '" ';
   echo 'totalcapacity="' . $row['totalcapacity'] . '" ';
-  echo 'spaces="' . $row['spcaes'] . '" ';
+  echo 'spaces="' . $row['spaces'] . '" ';
   echo 'description="' . $row['description'] . '" ';
   echo 'firstname="' . $row['firstname'] . '" ';
   echo 'lastname="' . $row['lastname'] . '" ';
