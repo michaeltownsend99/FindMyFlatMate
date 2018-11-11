@@ -36,8 +36,7 @@ if (isset($_POST['submit'])) {
             exit();
         } else {
             //insert the user into the database
-            $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO houses (latitude, longitude, totalcapacity, spaces, housepassword, description, address, firstname, lastname, email, phonenumber) VALUES ('$latitude', '$longitude', '$capacity', '$spaces', '$hashedPwd', '$description', '$address', '$firstname', '$lastname', '$email', '0')";
+            $sql = "INSERT INTO houses (latitude, longitude, totalcapacity, spaces, housepassword, description, address, firstname, lastname, email, phonenumber) VALUES ('$latitude', '$longitude', '$capacity', '$spaces', '$pwd', '$description', '$address', '$firstname', '$lastname', '$email', '0')";
 			if ($connection->query($sql) === TRUE) {
                 echo "New record created successfully";
                 header("Location: /main.html?creation=success"); //change to the page

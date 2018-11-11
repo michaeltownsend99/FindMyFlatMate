@@ -26,11 +26,10 @@
 
       #search-bar{
         position: absolute;
-        left: 50%;
+        left: 20%;
         height: 42px;
         width: /*240px*/15%;
         border-radius: 2px;
-        left: 17%;
         top: 9px;
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
@@ -59,7 +58,7 @@
 
       #add-house{
         position: absolute;
-        right: 7%;
+        right: 16%;
         top: 10px;
         width: 8%;
         border: none;
@@ -77,6 +76,26 @@
         border-radius: 2px;
         font-family: Roboto;
       }
+
+      #delete-house{
+        position: absolute;
+        right: 7%;
+        top: 10px;
+        width: 8%;
+        border: none;
+        background-color: white;
+        height: 40px;
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+      }
+
+      #delete-button{
+        background-color: white;
+        height: 40px;
+        border: 0px;
+        width: 100%;
+        border-radius: 2px;
+        font-family: Roboto;
     </style>
   </head>
   <body>
@@ -91,6 +110,11 @@
       <div id="add-house">
         <form action="HouseInfo.php">
           <input type="submit" id="add-button" value="Add House" />
+        </form>
+      </div>
+      <div id="delete-house">
+        <form action="delete.php">
+          <input type="submit" id="delete-button" value="Delete House" />
         </form>
       </div>
     <!--</div>-->

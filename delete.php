@@ -21,7 +21,7 @@ input[type=password], select {
     box-sizing: border-box;
 }
 
-input[type=textarea], select {
+input[type=email], select {
     resize: none;
     width: 100%;
     padding: 12px 20px;
@@ -97,9 +97,13 @@ body {
     <center>
     <div class="area">
       <form action ="PwdCheck.php" method="POST">
+         <label for="email">Email</label>
+
+        <input type="email" id="email" name="email" placeholder="Your email.." required>
+
         <label for="pass">House Password</label>
 
-        <input type="text" id="pass" name="pass" placeholder="Your house password.." required>
+        <input type="password" id="pass" name="pass" placeholder="Your house password.." required>
 
         <input type="submit" name="submit" value="Delete">
       </form>

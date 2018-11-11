@@ -9,6 +9,7 @@ if (isset($_POST['submit'])) {
         exit();
 	}
 	
+	$email = $_POST['email'];
 	$pwd = $_POST['pass'];
 
 	//error handlers
@@ -20,14 +21,25 @@ if (isset($_POST['submit'])) {
 
 	} else {
 
-		$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-		$sql= "SELECT * FROM houses WHERE housepassword = '$hashedPwd'";
+		
+		$sql= "SELECT * FROM houses WHERE housepassword = '$pwd' AND email = '$email'";
 		$result = mysqli_query($connection,$sql);
 		$check = mysqli_fetch_array($result);
 		if(isset($check)){
 
 			//you can delete or add stuff here 
+			$sql = "DELETE FROM houses WHERE housepassword = '$pwd' AND email = '$email'";
 
+
+			if ($connection->query($sql) === TRUE) {
+                echo "House Deleted successfully";
+                header("Location: /main.html?creation=success"); //change to the page
+            } else {
+                echo "Error: " . $sql . "<br>" . $connection->error;
+               // header("Location: /main.html?creation=failed"); //change to the page
+            }
+            $connection->close();
+           
 
 		} else {
 			header("Location: /delete.php?password=wrongpassword");
