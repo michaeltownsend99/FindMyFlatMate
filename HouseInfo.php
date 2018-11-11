@@ -200,8 +200,8 @@ body {
           position: results[0].geometry.location
         });
         map.setZoom(16);
-        document.getElementById('latitude').value = results[0].geometry.location.lat;
-        document.getElementById('longitude').value = results[0].geometry.location.lng;
+        document.getElementById('latitude').value = results[0].geometry.location.lat();
+        document.getElementById('longitude').value = results[0].geometry.location.lng();
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
