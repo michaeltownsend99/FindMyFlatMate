@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 
 		$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 		$sql= "SELECT * FROM houses WHERE housepassword = '$hashedPwd'";
-		$result = mysqli_query($con,$sql);
+		$result = mysqli_query($connection,$sql);
 		$check = mysqli_fetch_array($result);
 		if(isset($check)){
 
