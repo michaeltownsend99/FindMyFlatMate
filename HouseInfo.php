@@ -97,7 +97,7 @@ body {
 
 <div class="column">
     <div class="area">
-      <form action ="PutDataInTable.php" method="POST">
+      <form onsubmit="validate()" action ="PutDataInTable.php" method="POST">
         <label for="fname">First Name</label>
 
         <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
@@ -207,6 +207,14 @@ body {
         alert('Geocode was not successful for the following reason: ' + status);
       }
     });
+  }
+  function validate(){
+    if(document.getElementById('latitude') === ""){
+      return false;
+    }
+    else{
+      return true;
+    }
   }
 </script>
 <script async defer
