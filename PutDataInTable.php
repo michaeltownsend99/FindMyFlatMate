@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
     //Error handlers
     //empty fields check
 
-	
+
     if (empty($firstname) || empty($lastname) || empty($address) || empty($capacity) || empty($spaces) || empty($email) || empty($description) || empty($pwd)) {
         header("Location: /HouseInfo.php?signup=empty");
         exit();
@@ -39,12 +39,14 @@ if (isset($_POST['submit'])) {
             $sql = "INSERT INTO houses (latitude, longitude, totalcapacity, spaces, housepassword, description, address, firstname, lastname, email, phonenumber) VALUES ('$longitude', '$latitude', '$totalcapacity', '$spaces', '$housepassword', '$description', '$address', '$firstname', '$lastname', '$email', '0')";
 			if ($connection->query($sql) === TRUE) {
                 echo "New record created successfully";
+								header("Location: /main.html?signup=success"); //change to the page
+
             } else {
                 echo "Error: " . $sql . "<br>" . $connection->error;
+								header("Location: /main.html?signup=failed"); //change to the page
             }
             $connection->close();
-           
-            header("Location: /main.html"); //change to the page
+
              exit();
         }
 
