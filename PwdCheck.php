@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['submit'])) {
-	include 'config.inc.php';
+	require 'cred.php';
 	$connection=mysqli_connect('35.195.42.162', $username, $password, $database);
 	if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 	//Check if inputs are empty
 
 	if (empty($pwd)) {
-		  header("Location: /delete.php?password=empty");
+		header("Location: /delete.php?password=empty");
 	    exit();
 
 	} else {
@@ -25,6 +25,8 @@ if (isset($_POST['submit'])) {
 		$result = mysqli_query($con,$sql);
 		$check = mysqli_fetch_array($result);
 		if(isset($check)){
+
+			//you can delete or add stuff here 
 
 
 		} else {
