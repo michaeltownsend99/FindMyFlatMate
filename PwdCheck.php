@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 	} else {
 
 		$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-		$sql= "SELECT * FROM user WHERE password = '$hashedPwd'";
+		$sql= "SELECT * FROM houses WHERE housepassword = '$hashedPwd'";
 		$result = mysqli_query($con,$sql);
 		$check = mysqli_fetch_array($result);
 		if(isset($check)){
