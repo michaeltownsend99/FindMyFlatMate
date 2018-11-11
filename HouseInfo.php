@@ -133,7 +133,7 @@ body {
 
         <input type="password" id="password" name="password" placeholder="Your house password.." required>
 
-        <button type="submit" name="submit">Done</button>
+        <input type="submit" name="submit" value="Done">
       </form>
     </div>
 </div>
