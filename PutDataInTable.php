@@ -43,12 +43,12 @@ if (isset($_POST['submit'])) {
                 header("Location: /main.html?creation=success"); //change to the page
             } else {
                 echo "Error: " . $sql . "<br>" . $connection->error;
-                header("Location: /main.html?creation=failed"); //change to the page
+               // header("Location: /main.html?creation=failed"); //change to the page
             }
             $connection->close();
            
             
-             exit();
+             //exit();
         }
 
    }
