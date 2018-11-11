@@ -40,12 +40,14 @@ if (isset($_POST['submit'])) {
             $sql = "INSERT INTO houses (latitude, longitude, totalcapacity, spaces, housepassword, description, address, firstname, lastname, email, phonenumber) VALUES ('$longitude', '$latitude', '$capacity', '$spaces', '$hashedPwd', '$description', '$address', '$firstname', '$lastname', '$email', '0')";
 			if ($connection->query($sql) === TRUE) {
                 echo "New record created successfully";
+                header("Location: /main.html?creation=success"); //change to the page
             } else {
                 echo "Error: " . $sql . "<br>" . $connection->error;
+                header("Location: /main.html?creation=failed"); //change to the page
             }
             $connection->close();
            
-            header("Location: /main.html"); //change to the page
+            
              exit();
         }
 
