@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Add a House</title>
+</head>
 <style>
 input[type=text], select {
     width: 100%;

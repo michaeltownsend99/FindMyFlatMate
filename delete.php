@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Delete a House</title>
+</head>
 <style>
 
 
