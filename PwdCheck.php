@@ -1,22 +1,21 @@
 <?php
 
-$connection=mysqli_connect('35.195.42.162', $username, $password, $database);
+if (isset($_POST['submit'])) {
+	include 'config.inc.php';
+	$connection=mysqli_connect('35.195.42.162', $username, $password, $database);
 	if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
         header("Location: /HouseInfo.php?signup=empty");
         exit();
 	}
-
-if (isset($_POST['submit'])) {
-	include 'config.inc.php';
-	$uid = mysqli_real_escape_string($conn, $_POST['user_name']);
-	$pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
+	
+	$pwd = $_POST['pass'];
 
 	//error handlers
 	//Check if inputs are empty
 
-	if (empty($uid) || empty($pwd)) {
-		  header("Location: ../index.php?login=empty");
+	if (empty($pwd)) {
+		  header("Location: /delete.php?password=empty");
 	    exit();
 
 	} else {
@@ -29,12 +28,12 @@ if (isset($_POST['submit'])) {
 
 
 		} else {
-			header("Location: ../index.php?login=wrongpassword");
+			header("Location: /delete.php?password=wrongpassword");
 			exit();
 		}
 		
 	}
 } else {
-	header("Location: ../index.php?login=buttonnotpressed");
+	header("ocation: /delete.php?password==buttonnotpressed");
 	exit();
 }
