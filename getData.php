@@ -30,6 +30,8 @@
   die('Invalid query: ' . mysqli_error($connection));
   }
 
+  header("Content-type: text/xml");
+
 
   // Start XML file, echo parent node
   echo "<?xml version='1.0' ?>";
