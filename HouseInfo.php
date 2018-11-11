@@ -208,9 +208,6 @@ body {
       }
     });
   }
-  /*function validate(){
-    var address = document.getElementById('address').value;
-  }*/
 </script>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgYKliWrj5R0-7dXRZIagge7vPkTSzHFY&callback=initMap">
