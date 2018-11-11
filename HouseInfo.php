@@ -185,7 +185,7 @@ body {
     infoWindow.setContent(browserHasGeolocation ?
                           'Error: The Geolocation service failed.' :
                           'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
+    //infoWindow.open(map);
   }
 
   function geocodeAddress(geocoder, resultsMap) {
