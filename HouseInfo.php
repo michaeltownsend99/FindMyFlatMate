@@ -140,8 +140,7 @@ body {
 
 <!-- ADD MAP HERE IN BELOW DIV -->
 
-<div class="column">
-  <div id="map"></div>
+<div class="column" id="map">
 </div>
 <script>
   var map, infoWindow, marker, geocoder;
