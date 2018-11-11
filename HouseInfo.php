@@ -219,6 +219,7 @@ body {
   }
   function validate(){
     if(document.getElementById('latitude').value == ""){
+      alert("You must show on map before submitting");
       return false;
     }
   }
