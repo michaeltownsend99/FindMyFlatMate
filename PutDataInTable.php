@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
     //empty fields check
 
 	
-    if (empty($firstname) || empty($lastname) || empty($address) || empty($capacity) || empty($spaces) || empty($email) || empty($number) || empty($description) || empty($pwd)) {
+    if (empty($firstname) || empty($lastname) || empty($address) || empty($capacity) || empty($spaces) || empty($email) || empty($description) || empty($pwd)) {
         header("Location: /HouseInfo.php?signup=empty");
         exit();
     } else {
