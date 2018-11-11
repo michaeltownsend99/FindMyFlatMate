@@ -108,8 +108,8 @@ body {
 
         <input type="text" id="address" name="Address" placeholder="Your address.." required>
         <button type="button" id="show">Show on map</button><br>
-        <input type="hidden" name="latitude" value="">
-        <input type="hidden" name="longitude" value="">
+        <input type="hidden" name="latitude" id="latitude" value="">
+        <input type="hidden" name="longitude" id="longitude" value="">
 
         <br>
 
@@ -200,8 +200,8 @@ body {
           position: results[0].geometry.location
         });
         map.setZoom(16);
-        document.getElementById('latitude').value = results[0].geometry.location.lat;
-        document.getElementById('longitude').value = results[0].geometry.location.lng;
+        document.getElementById('latitude').value = results[0].geometry.location.lat();
+        document.getElementById('longitude').value = results[0].geometry.location.lng();
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
