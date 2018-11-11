@@ -35,14 +35,15 @@ input[type=textarea], select {
 
 
 input[type=submit] {
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  width: 100%;
+  background-color: light-gray;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 2px;
+  border-color: gray;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 input[type=submit]:hover {
@@ -53,11 +54,12 @@ input[type=submit]:hover {
 
 button[type=button] {
     width: 100%;
-    background-color: black;
-    color: white;
+    background-color: light-gray;
+    color: black;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+    border: 2px;
+    border-color: gray;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -68,11 +70,20 @@ button[type=button]:hover {
 }
 
 .area {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
 
+    border-radius: 5px;
+    /* background-color: #f2f2f2; */
+    background-color: white;
+    padding: 20px;
+    padding-top: 150px;
 }
+
+
+.column label
+{
+  font-size: 20px;
+}
+
 
 /* Create two equal columns that floats next to each other */
 .column {
@@ -83,14 +94,14 @@ button[type=button]:hover {
 }
 
 body {
-    background-color: black;
+    background-color: white;
 }
 
 #map{
   height: 100%;
-  width: 50%;
+  width: 55%;
   float: right;
-  min-height: 600px;
+  min-height: 930px;
 }
 </style>
 <body>
@@ -98,15 +109,15 @@ body {
 <div class="column">
     <div class="area">
       <form onsubmit="return validate()" action ="PutDataInTable.php" method="POST">
-        <label for="fname">First Name</label>
+        <label for="fname" font.style="">Enter the house details:</label>
 
         <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
 
-        <label for="lname">Last Name</label>
+        <!-- <label for="lname">Last Name</label> -->
 
         <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
 
-        <label for="address">House Address</label>
+        <!-- <label for="address">House Address</label> -->
 
         <input type="text" id="address" name="Address" placeholder="Your address.." required>
         <button type="button" id="show">Show on map</button><br>
@@ -115,23 +126,23 @@ body {
 
         <br>
 
-        <label for="capacity">Total Capacity</label>
+        <!-- <label for="capacity">Total Capacity</label> -->
 
         <input type="text" id="capacity" name="Capacity" placeholder="House Capacity.." required>
 
-        <label for="spaces">Spaces Left</label>
+        <!-- <label for="spaces">Spaces Left</label> -->
 
         <input type="text" id="spaces" name="spaces" placeholder="Spaces left in the house.." required>
 
-        <label for="email">Email</label>
+        <!-- <label for="email">Email</label> -->
 
         <input type="text" id="email" name="email" placeholder="Your email.." required>
 
-        <label for="descreption">Description Of House</label>
+        <!-- <label for="descreption">Description Of House</label> -->
 
         <input type="textarea" maxlength="280" id="descreption" name="descreption" placeholder="A descreption of the house.." required>
 
-        <label for="password">Password</label>
+        <!-- <label for="password">Password</label> -->
 
         <input type="password" id="password" name="password" placeholder="Your house password.." required>
 
