@@ -77,11 +77,10 @@ button[type=button]:hover {
 /* Create two equal columns that floats next to each other */
 .column {
     float: left;
-    width: 50%;
+    width: 40%;
     padding: 10px;
     height: auto;
 }
-
 
 body {
     background-color: black;
@@ -89,6 +88,8 @@ body {
 
 #map{
   height: 100%;
+  width: 50%;
+  float: right;
 }
 </style>
 <body>
