@@ -14,12 +14,12 @@ if (isset($_POST['submit'])) {
     $latitude = $_POST['latitude'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
-    $address = $_POST['address'];
-    $capacity = $_POST['capacity'];
+    $address = $_POST['Address'];
+    $capacity = $_POST['Capacity'];
     $spaces = $_POST['spaces'];
     $email = $_POST['email'];
-    $description = $_POST['description'];
-    $pwd = $_POST['pwd'];
+    $description = $_POST['descreption'];
+    $pwd = $_POST['password'];
 
 
     //Error handlers
