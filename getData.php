@@ -30,6 +30,8 @@
   die('Invalid query: ' . mysqli_error($connection));
   }
 
+  header("Content-type: text/xml");
+
 
   // Start XML file, echo parent node
   echo "<?xml version='1.0' ?>";
@@ -43,7 +45,7 @@
   echo 'latitude="' . $row['latitude'] . '" ';
   echo 'longitude="' . $row['longitude'] . '" ';
   echo 'totalcapacity="' . $row['totalcapacity'] . '" ';
-  echo 'spaces="' . $row['spcaes'] . '" ';
+  echo 'spaces="' . $row['spaces'] . '" ';
   echo 'description="' . $row['description'] . '" ';
   echo 'firstname="' . $row['firstname'] . '" ';
   echo 'lastname="' . $row['lastname'] . '" ';
