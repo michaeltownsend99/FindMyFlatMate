@@ -90,6 +90,7 @@ body {
   height: 100%;
   width: 50%;
   float: right;
+  min-height: 600px;
 }
 </style>
 <body>
