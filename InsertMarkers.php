@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
+    
+   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Simple Map</title>
+   
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -17,16 +19,15 @@
         padding: 0;
       }
     </style>
-    <link rel="stylesheet" href="map-icons-master\dist\css\map-icons.css">
-
+   
   </head>
   <body>
     <div id="map"></div>
-     <script src="map-icons-master\dist\js\map-icons.js"></script>
+   
     <script>
-      src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js";
+      
       var map;
-      var uluru = {lat: -25.344, lng: 131.036};
+     
       function initMap() {
 
         map = new google.maps.Map(document.getElementById('map'), {
@@ -41,6 +42,9 @@
 
         };
 
+
+      
+
         var infoWindow = new google.maps.InfoWindow;
 
 
@@ -49,7 +53,7 @@
           // Change this depending on the name of your PHP or XML file
           downloadUrl('getData.php', function(data) {
                       var xml = data.responseXML;
-                      var markers = xml.documentElement.getElementsByTagName('house');
+                      var houses = xml.documentElement.getElementsByTagName('house');
                       Array.prototype.forEach.call(houses, function(houseElem) {
                         var address = houseElem.getAttribute('address');
                         var totalcapacity = parseInt(houseElem.getAttribute('totalcapacity'));
@@ -58,19 +62,36 @@
                         var firstname = houseElem.getAttribute('firstname');
                         var lastname = houseElem.getAttribute('lastname');
                         var email = houseElem.getAttribute('email');
+
+                        // var latitude = parseFloat(houseElem.getAttribute('latitude'));
+
+                        // var longitude = parseFloat(houseElem.getAttribute('longitude'));
+
+
                         var phonenumber = parseInt(houseElem.getAttribute('phonenumber'));
+
+
                         var point = new google.maps.LatLng(
-                            parseFloat(houseElem.getAttribute('latitude')),
-                            parseFloat(houseElem.getAttribute('longitude')));
+                  parseFloat(houseElem.getAttribute('latitude')),
+                  parseFloat(houseElem.getAttribute('longitude')));
+
+
+                        console.log(point.lat());
+                        // var point = {lat: parseFloat(houseElem.getAttribute('latitude')), lng: parseFloat(houseElem.getAttribute('longitude')) };
 
                         var infowincontent = document.createElement('div');
                         var strong = document.createElement('strong');
                         strong.textContent = address
+
+                      
+
                         infowincontent.appendChild(strong);
                         infowincontent.appendChild(document.createElement('br'));
 
+                
+
                         var text = document.createElement('text');
-                        text.textContent = "Descreption: " + descreption
+                        text.textContent = "Description: " + description
                         infowincontent.appendChild(text);
 
                         infowincontent.appendChild(document.createElement('br'));
@@ -80,30 +101,35 @@
 
                         infowincontent.appendChild(document.createElement('br'));
                         var text3 = document.createElement('text');
-                        text1.textContent = "Name: " + firstname + " " + lastname
+                        text3.textContent = "Name: " + firstname + " " + lastname
                         infowincontent.appendChild(text3);
 
                         infowincontent.appendChild(document.createElement('br'));
                         var text2 = document.createElement('text');
-                        text1.textContent = "Email: " + email
+                        text2.textContent = "Email: " + email
                         infowincontent.appendChild(text2);
+
+                        console.log(infowincontent);
 
 
 
 
                         //creation of marker
-                        var marker = new google.maps.Marker({
+                        var house = new google.maps.Marker({
+                          map: map,
+                         // position: {lat: latitude, lng: longitude},
                           position: point,
-                          map: map, //or marker.setMap(map)
+                           //or marker.setMap(map)
                           icon: image,
                           title: address
                         });
 
+                        console.log(house.position.lat());
 
                         //on click it opens the window with the contets of //infowincontent
-                        marker.addListener('click', function() {
+                        house.addListener('click', function() {
                                 infoWindow.setContent(infowincontent);
-                                infoWindow.open(map, marker);
+                                infoWindow.open(map, house);
                         });
 
 
@@ -111,4 +137,31 @@
                       });
                     });
                   }//initMap
+
+
+
+                  function downloadUrl(url, callback) {
+        var request = window.ActiveXObject ?
+            new ActiveXObject('Microsoft.XMLHTTP') :
+            new XMLHttpRequest;
+
+        request.onreadystatechange = function() {
+          if (request.readyState == 4) {
+            request.onreadystatechange = doNothing;
+            callback(request, request.status);
+          }
+        };
+
+        request.open('GET', url, true);
+        request.send(null);
+      }
+
+      function doNothing() {}
+
+             </script>
+
+             <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgYKliWrj5R0-7dXRZIagge7vPkTSzHFY&callback=initMap">
+</script>
+             </body>     
 </html>
